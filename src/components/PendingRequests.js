@@ -19,7 +19,7 @@ const PendingRequests = () => {
 
   const fetchPendingRequests = async () => {
     try {
-      const res = await axios.get("http://localhost/pausedesk-backend/get_leaves.php?role=hod");
+      const res = await axios.get("https://pausedesk.infinityfreeapp.com/get_leaves.php?role=hod");
       if (Array.isArray(res.data)) {
         const pending = res.data.filter((req) => req.status === "Pending");
         setPendingRequests(pending);
@@ -41,7 +41,7 @@ const PendingRequests = () => {
     }
 
     try {
-      const res = await axios.post("http://localhost/pausedesk-backend/update_leave_status.php", {
+      const res = await axios.post("https://pausedesk.infinityfreeapp.com/update_leave_status.php", {
         id,
         status,
         hod_reason: reason,

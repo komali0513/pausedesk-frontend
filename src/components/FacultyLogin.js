@@ -10,7 +10,7 @@ const FacultyLogin = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost/pausedesk-backend/login_faculty.php", {
+      const res = await axios.post("https://pausedesk.infinityfreeapp.com/login_faculty.php", {
         email,
         password,
       });

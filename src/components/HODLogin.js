@@ -9,7 +9,7 @@ const HODLogin = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost/pausedesk-backend/login_hod.php", {
+      const res = await axios.post("https://pausedesk.infinityfreeapp.com/login_hod.php", {
         email,
         password,
       });

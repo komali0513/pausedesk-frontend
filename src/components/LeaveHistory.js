@@ -10,7 +10,7 @@ const LeaveHistory = ({ facultyId }) => {
     if (facultyId) {
       const fetchLeaveHistory = async () => {
         try {
-          const res = await axios.get(`https://pausedesk.infinityfreeapp.com/get_leaves.php?faculty_id=${facultyId}`);
+          const res = await axios.get(`https://pausedesk.byethost18.com/get_leaves.php?faculty_id=${facultyId}`);
           if (Array.isArray(res.data)) {
             setLeaves(res.data);
           } else {

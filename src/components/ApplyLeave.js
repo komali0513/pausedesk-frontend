@@ -22,7 +22,7 @@ const ApplyLeave = ({ facultyId }) => {
     };
 
     try {
-      const response = await axios.post('https://pausedesk.byethost18.com/apply_leave.php', leaveData, {
+      const response = await axios.post('https://pausedesk.infinityfreeapp.com/apply_leave.php', leaveData, {
         headers: { 'Content-Type': 'application/json' }
       });
 

@@ -1,7 +1,7 @@
 // src/components/FacultyLogin.js
 import React, { useState } from "react";
 import axios from "axios";
-import "./FacultyLogin.css"; // ✅ Import the CSS
+import "./FacultyLogin.css";
 
 const FacultyLogin = () => {
   const [email, setEmail] = useState("");
@@ -10,10 +10,14 @@ const FacultyLogin = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("https://pausedesk.infinityfreeapp.com/login_faculty.php", {
-        email,
-        password,
-      });
+      const formData = new FormData();
+      formData.append("email", email);
+      formData.append("password", password);
+
+      const res = await axios.post(
+        "https://pausedesk.infinityfreeapp.com/login_faculty.php",
+        formData
+      );
 
       if (res.data.status === "success") {
         localStorage.setItem("user", JSON.stringify(res.data));
